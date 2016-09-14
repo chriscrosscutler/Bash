@@ -24,6 +24,17 @@ echo $i
 sbatch /fslhome/ccutle25/scripts/ants/mios/jlf/$i
 done
 
+
+for i in $(ls /fslhome/ccutle25/scripts/ants/repeatability/ANTs/pre/); do
+echo $i
+sbatch /fslhome/ccutle25/scripts/ants/repeatability/ANTs/pre/$i
+done
+
+for i in $(ls /fslhome/ccutle25/scripts/ants/repeatability/ANTsCT/pre/); do
+echo $i
+sbatch /fslhome/ccutle25/scripts/ants/repeatability/ANTsCT/pre/$i
+done
+
 for i in $(ls /fslhome/ccutle25/scripts/ants/mios/pre/); do
 echo $i
 sbatch /fslhome/ccutle25/scripts/ants/mios/pre/$i
