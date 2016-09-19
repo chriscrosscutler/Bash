@@ -10,3 +10,5 @@ for var in $(ls <path>); do
 
 done
 
+# reame a file
+find <path to subj> -name "<what you want to find>" -exec mv {} new name.nii
