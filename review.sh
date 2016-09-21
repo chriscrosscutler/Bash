@@ -23,7 +23,7 @@ $c3dLoc ${subjdir}/BrainExtractionBrain.nii.gz -slice y 50% -type uchar -o $subj
 $c3dLoc ${subjdir}/BrainExtractionBrain.nii.gz -slice z 50% -type uchar -o $subjdir/z.png
 convert -flip $subjdir/x.png $subjdir/x.png
 convert -flip $subjdir/y.png $subjdir/y.png
-montage ${subjdir}/x.png ${subjdir}/y.png ${subjdir}/z.png -mode concatenate -tile 2x2 ${subj}.png
+montage -geometry 500x500 ${subjdir}/x.png ${subjdir}/y.png ${subjdir}/z.png -mode concatenate -tile 2x2 ${subj}.png
 rm $subjdir/x.png
 rm $subjdir/y.png
 rm $subjdir/z.png
@@ -39,4 +39,4 @@ done
 
 #create PDF
 cd ${savelocation}/preview/
-convert *.png -gravity South -annotate 0 '%f' ${savelocation}/preview.pdf
+convert *.png -fill red -gravity South -annotate 0 '%f' ${savelocation}/preview.pdf
