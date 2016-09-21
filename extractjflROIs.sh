@@ -124,8 +124,6 @@ printf "\n" >> $dataLocation/data_re.csv
 for subj in $(ls $dir); do
 lineArray=()
 subjDir=$subj
-filen="${subj%.*}"
-filename="${filen%.*}"
 output="$(/fslhome/ccutle25/apps/c3d/bin/c3d  /fslhome/ccutle25/rerun/${subj}/nate_BrainExtractionBrain.nii.gz /fslhome/ccutle25/rerun/${subj}/extra_files_jlf/jlf_Labels.nii.gz -label-statistics)"
 
 arr=($output)
