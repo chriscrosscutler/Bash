@@ -24,6 +24,7 @@ subjDir=~/compute/Repeatability/ANTs/sub5_9/$subj
 $subjDir/
 done
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 for subj in $(ls ~/compute/class); do
 echo $subj
@@ -38,5 +39,7 @@ done
 -o ~/compute/class/1304/t1/ \
 -x y \
 ~/compute/class/1304/DICOM/
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

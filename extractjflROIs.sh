@@ -12,13 +12,13 @@
 # Note: You will also need to edit the c3d command to match how your directories are set up.
 
 # This is the location of your subjects
-dir="/fslhome/ccutle25/to_export" 
+dir="/fslhome/ccutle25/rerun/"
 # Where you want you .csv file saved.
-dataLocation="/fslhome/ccutle25/" 
+dataLocation="/fslhome/ccutle25/"
 
 cd $dir
 
-labelArray=(	
+labelArray=(
 'Subject_ID'
 'background'
 'left_lateral_ventricle'
@@ -118,15 +118,15 @@ labelArray=(
 'right_insula'
 )
 
-printf "%s," "${labelArray[@]}" > $dataLocation/data_.csv
-printf "\n" >> $dataLocation/data_.csv
+printf "%s," "${labelArray[@]}" > $dataLocation/data_re.csv
+printf "\n" >> $dataLocation/data_re.csv
 
-for subj in $(ls $dir); do 
+for subj in $(ls $dir); do
 lineArray=()
 subjDir=$subj
 filen="${subj%.*}"
 filename="${filen%.*}"
-output="$(/fslhome/ccutle25/apps/c3d/bin/c3d ${subj} /fslhome/ccutle25/compute/Repeatability/Dehydration/subject_9/${filename}/labels/Labels.nii.gz -label-statistics)" 
+output="$(/fslhome/ccutle25/apps/c3d/bin/c3d  /fslhome/ccutle25/rerun/${subj}/BrainExtractionBrain.nii.gz /fslhome/ccutle25/rerun/${subj}/extra_files_jlf/jlf_labels.nii.gz -label-statistics)" 
 
 arr=($output)
 i=0
@@ -143,7 +143,7 @@ else
 num=$((lineNum*10-2))
 num2=$((num+6))
 fi
-	
+
 ###########################################################################
 # Remove ROI's that don't always appear.				 				  #
 # NOTE: There may be other ROI's that cause problems. 			 		  #
@@ -175,10 +175,9 @@ done
 # SAVE DATA #
 #############
 
-printf "$subj" >> $dataLocation/data_.csv
-printf "," >> $dataLocation/data_.csv
-printf "%s," "${lineArray[@]}" >> $dataLocation/data_.csv
-printf "\n" >> $dataLocation/data_.csv
+printf "$subj" >> $dataLocation/data_re.csv
+printf "," >> $dataLocation/data_re.csv
+printf "%s," "${lineArray[@]}" >> $dataLocation/data_re.csv
+printf "\n" >> $dataLocation/data_re.csv
 
 done
-
