@@ -126,7 +126,7 @@ lineArray=()
 subjDir=$subj
 filen="${subj%.*}"
 filename="${filen%.*}"
-output="$(/fslhome/ccutle25/apps/c3d/bin/c3d  /fslhome/ccutle25/rerun/${subj}/BrainExtractionBrain.nii.gz /fslhome/ccutle25/rerun/${subj}/extra_files_jlf/jlf_labels.nii.gz -label-statistics)" 
+output="$(/fslhome/ccutle25/apps/c3d/bin/c3d  /fslhome/ccutle25/rerun/${subj}/nate_BrainExtractionBrain.nii.gz /fslhome/ccutle25/rerun/${subj}/extra_files_jlf/jlf_Labels.nii.gz -label-statistics)"
 
 arr=($output)
 i=0
