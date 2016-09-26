@@ -8,8 +8,8 @@
 ###################
 # CHANGE THESE!!! #
 ###################
-datalocation=/fslhome/ccutle25/compute/Repeatability/Dehydration/Rerun #Folder where your subjects are located please end this file path without a /!!!!
-savelocation=/fslhome/ccutle25/compute/Repeatability/Dehydration #Where you want the preview PDF to be saved please end this file path without a /!!!!
+datalocation=/fslhome/ccutle25/compute/Repeatability/ANTsCT #Folder where your subjects are located please end this file path without a /!!!!
+savelocation=/fslhome/ccutle25/compute/Repeatability/ANTsCT #Where you want the preview PDF to be saved please end this file path without a /!!!!
 c3dLoc=/fslhome/ccutle25/apps/c3d/bin/c3d #Where C3D is
 ########################################################################
 
