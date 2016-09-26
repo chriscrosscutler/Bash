@@ -20,11 +20,11 @@ export ANTSPATH=/fslhome/$var/bin/antsbin/bin/
 PATH=${ANTSPATH}:${PATH}
 
 # INSERT CODE, AND RUN YOUR PROGRAMS HERE
-DATA_DIR=~/templates/Repeat/
+DATA_DIR=~/templates/repeat_templates/head/
 TEMPLATE_DIR=~/templates/OASIS/MICCAI2012-Multi-Atlas-Challenge-Data/
 ~/bin/antsbin/bin/antsCorticalThickness.sh \
 -d 3 \
--a ${DATA_DIR}/Repeat_template.nii.gz \
+-a ${DATA_DIR}/Repeat_template_head.nii.gz \
 -e ${TEMPLATE_DIR}/T_template0.nii.gz \
 -t ${TEMPLATE_DIR}/T_template0_BrainCerebellum.nii.gz \
 -m ${TEMPLATE_DIR}/T_template0_BrainCerebellumProbabilityMask.nii.gz \
