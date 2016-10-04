@@ -1,9 +1,11 @@
 #!/bin/bash
 
-#SBATCH --time=06:00:00   # walltime
+#SBATCH --time=07:00:00   # walltime
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --mem-per-cpu=16384M  # memory per CPU core
+#SBATCH -o /fslhome/ccutle25/logfiles/output/o_repeat_head.txt
+#SBATCH -e /fslhome/ccutle25/logfiles/error/e_repeat_head.txt
 
 # Compatibility variables for PBS. Delete if not needed.
 export PBS_NODEFILE=`/fslapps/fslutils/generate_pbs_nodefile`
