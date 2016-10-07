@@ -21,12 +21,15 @@ var=`id -un`
 export ANTSPATH=/fslhome/$var/bin/antsbin/bin/
 PATH=${ANTSPATH}:${PATH}
 
-# INSERT CODE, AND RUN YOUR PROGRAMS HERE
+# CHANGE THESE VARIABLES!!!
 DATA_DIR=~/templates/repeat_templates/head/
 TEMPLATE_DIR=~/templates/OASIS/MICCAI2012-Multi-Atlas-Challenge-Data/
+TEMPLATE_NAME=Repeat_template_head
+
+#Run ANTsCT
 ~/bin/antsbin/bin/antsCorticalThickness.sh \
 -d 3 \
--a ${DATA_DIR}/Repeat_template_head.nii.gz \
+-a ${DATA_DIR}/${TEMPLATE_NAME}.nii.gz \
 -e ${TEMPLATE_DIR}/T_template0.nii.gz \
 -t ${TEMPLATE_DIR}/T_template0_BrainCerebellum.nii.gz \
 -m ${TEMPLATE_DIR}/T_template0_BrainCerebellumProbabilityMask.nii.gz \
@@ -36,11 +39,10 @@ TEMPLATE_DIR=~/templates/OASIS/MICCAI2012-Multi-Atlas-Challenge-Data/
 -o ${DATA_DIR}/antsCT/
 
 ## COPY MASK
-
 cp ${DATA_DIR}/antsCT/BrainExtractionMask.nii.gz ${DATA_DIR}/template_BrainCerebellumMask.nii.gz
 
 ## EXTRACT BRAIN IMAGE
-${ANTSPATH}/ImageMath 3 ${DATA_DIR}/template_BrainCerebellum.nii.gz m ${DATA_DIR}/template_BrainCerebellumMask.nii.gz ${DATA_DIR}/template.nii.gz
+${ANTSPATH}/ImageMath 3 ${DATA_DIR}/template_BrainCerebellum.nii.gz m ${DATA_DIR}/template_BrainCerebellumMask.nii.gz ${DATA_DIR}/${TEMPLATE_NAME}.nii.gz
 
 # CONVERT MASK ROI TO PROBABILITY MASK
 ${ANTSPATH}/SmoothImage 3 ${DATA_DIR}/template_BrainCerebellumMask.nii.gz 1 ${DATA_DIR}/template_BrainCerebellumProbabilityMask.nii.gz
