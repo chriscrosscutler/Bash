@@ -35,6 +35,11 @@ echo $i
 sbatch /fslhome/ccutle25/scripts/ants/repeatability/ANTsCT/pre/$i
 done
 
+for i in $(ls /fslhome/ccutle25/scripts/ants/repeatability/ANTsReg); do
+echo $i
+sbatch /fslhome/ccutle25/scripts/ants/repeatability/ANTsReg/$i
+done
+
 for i in $(ls /fslhome/ccutle25/scripts/ants/repeatability/ANTsCT/ants/); do
 echo $i
 sbatch /fslhome/ccutle25/scripts/ants/repeatability/ANTsCT/ants/$i
