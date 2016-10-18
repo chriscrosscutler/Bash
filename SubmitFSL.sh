@@ -37,6 +37,7 @@ done
 
 for i in $(ls /fslhome/ccutle25/scripts/ants/repeatability/ANTsReg); do
 echo $i
+
 sbatch /fslhome/ccutle25/scripts/ants/repeatability/ANTsReg/$i
 done
 

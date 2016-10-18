@@ -15,7 +15,7 @@ usage()
 {
 	local scriptName=$(basename ${0})
   echo ""
-  echo " Preprocessing Pipeline for ANTs JLF"
+  echo " Preprocessing Pipeline for ANTs"
 
 }
 
