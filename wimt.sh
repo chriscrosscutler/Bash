@@ -2,7 +2,7 @@
 #SBATCH --time=50:00:00 # walltime
 #SBATCH --ntasks=2 # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1 # number of nodes
-#SBATCH -J "jlf" # job name
+#SBATCH -J "wimt" # job name
 #SBATCH --mem-per-cpu=32768M # memory per CPU core
 #SBATCH --mail-user=chris.b.cutler@gmail.com # email address
 #SBATCH --mail-type=END
