@@ -18,13 +18,10 @@ subjDir=~/compute/Repeatability/ANTsCT/$subj
 for subj in $(ls ~/compute/Repeatability/ANTs/sub5_9/); do
 echo $subj
 subjDir=~/compute/Repeatability/ANTs/sub5_9/$subj
->>>>>>> Stashed changes
 /fslhome/ccutle25/bin/dcm2niix/bin/dcm2niix \
 -f t1 \
 $subjDir/
 done
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
 for subj in $(ls ~/compute/class); do
 echo $subj
