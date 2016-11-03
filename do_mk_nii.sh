@@ -28,3 +28,10 @@ rm *.nii
 
 cd $workDir
 done
+
+
+/fslhome/ccutle25/bin/dcm2niix/bin/dcm2niix \
+-o /fslhome/ccutle25/finalsub/Bigler_Repeatability_0006Ah_M2/ \
+-x y \
+-f t1 \
+/fslhome/ccutle25/finalsub/Bigler_Repeatability_0006Ah_M2/

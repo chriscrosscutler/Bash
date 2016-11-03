@@ -16,7 +16,16 @@ for i in $(ls ~/compute/Repeatability/ANTsCT); do
   x=${sub}/antsCT/
   for j in $(ls ${sub}/antsCT/thresh_*); do
     FINALOUT="${j/$x}"
+    roi="${FINALOUT//[!0-9]/}"
     val=`c3d $j -dup -lstat`
-    echo "$i $FINALOUT $val"
+    IFS=$'\n' read -d '' -r -a arr <<< "$val"
+    read -ra arr2 <<<"${arr[2]}"
+    vol=${arr2[6]}
+    if [ "$roi" == "72" ] || [ "$roi" == "2033" ] || [ "$roi" == "1033" ] || [ "$roi" == "1032" ]; then
+      vol=0
+    fi
+    echo "$i $roi $vol" >> ~/antsReg.txt
+    unset arr
+    unset arr2
   done
-done >> antsReg.txt
+done
