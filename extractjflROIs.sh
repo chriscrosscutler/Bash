@@ -12,7 +12,7 @@
 # Note: You will also need to edit the c3d command to match how your directories are set up.
 
 # This is the location of your subjects
-dir="zhome/ccutle25/compute/Repeatability/ANTsCT/"
+dir="~/compute/Repeatability/ANTsCT/"
 # Where you want you .csv file saved.
 dataLocation="/fslhome/ccutle25/"
 
@@ -118,8 +118,8 @@ labelArray=(
 'right_insula'
 )
 
-printf "%s," "${labelArray[@]}" > $dataLocation/data_re.csv
-printf "\n" >> $dataLocation/data_re.csv
+printf "%s," "${labelArray[@]}" > $dataLocation/reg.csv
+printf "\n" >> $dataLocation/reg.csv
 
 for subj in $(ls $dir); do
 lineArray=()
